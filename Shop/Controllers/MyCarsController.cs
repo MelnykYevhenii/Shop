@@ -3,17 +3,17 @@ using Shop.Data.Interfaces;
 
 namespace Shop.Controllers
 {
-    public class CarsController : Controller
+    public class MyCarsController : Controller
     {
         private readonly IAllCars _allCars;
         private readonly ICarsCategory _allCategories;
 
-        public CarsController(IAllCars iAllCars, ICarsCategory iCarsCategories)
+        public MyCarsController(IAllCars iAllCars, ICarsCategory iCarsCategories)
         {
             _allCars = iAllCars;
             _allCategories = iCarsCategories;
         }
-        public ViewResult GoodsList()
+        public ViewResult MyCarsList()
         {
             var cars = _allCars.Cars;
             return View(cars);
