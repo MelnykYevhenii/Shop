@@ -8,6 +8,8 @@ namespace Shop
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc(options => options.EnableEndpointRouting = false);
+            services.AddControllersWithViews();
+            services.AddRazorPages().AddRazorRuntimeCompilation();
             services.AddTransient<IAllCars, MockCars>();
             services.AddTransient<ICarsCategory, MockCategory>();
         }
