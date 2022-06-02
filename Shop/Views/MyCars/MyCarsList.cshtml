@@ -1,17 +1,11 @@
-﻿<h1 class="text-center">Всі авто</h1m-5>
-<h3>@Model.currCategory</h3>
-<div class="row mt-1 mb-2">
-    @{
-        foreach (var car in Model.allCars)
-        {
-            <div class="col-lg-4 mx-auto">
-                <img class="img-thumbnail" src="@car.Img" alt="@car.Name" style="height: 250px; width: 400px;"/>
-                <h2>@car.Name</h2>
-                <p>Ціна: @car.Price.ToString("c", CultureInfo.CreateSpecificCulture("EN-US"))</p>
-                <p>
-                    <a class="btn btn-warning" href="#">Детальніше</a>
-                </p>
-            </div>
+﻿<h1 class="text-center">
+    Всі авто</h1m-5>
+    <h3>@Model.currCategory</h3>
+    <div class="row mt-1 mb-2">
+        @{
+            foreach (Car car in Model.allCars)
+            {
+                @Html.Partial("AllCars", car)
+            }
         }
-    }
-</div>
+    </div>

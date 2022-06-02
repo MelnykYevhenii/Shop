@@ -1,0 +1,10 @@
+﻿@model Shop.Data.Models.Car
+
+<div class="col-lg-4 mx-auto">
+    <img class="img-thumbnail" src="@Model.Img" alt="@Model.Name" style="height: 250px; width: 400px;"/>
+    <h2>@Model.Name</h2>
+    <p>Ціна: @Model.Price.ToString("c", CultureInfo.CreateSpecificCulture("EN-US"))</p>
+    <p>
+        <a class="btn btn-warning" href="#">Детальніше</a>
+    </p>
+</div>
