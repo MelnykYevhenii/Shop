@@ -1,0 +1,12 @@
+﻿@model Shop.ViewModels.HomeViewModel
+
+<h1 class="text-center">
+    Обрані авто</h1 m-5>
+    <div class="row mt-1 mb-2">
+        @{
+            foreach (Car car in Model.FavoriteCars)
+            {
+                @Html.Partial("AllCars", car)
+            }
+        }
+    </div>
