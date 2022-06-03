@@ -21,7 +21,7 @@ namespace Shop.Migrations
                 {
                     table.PrimaryKey("PK_Category", x => x.Id);
                 });
-
+             
             migrationBuilder.CreateTable(
                 name: "Car",
                 columns: table => new

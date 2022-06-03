@@ -28,15 +28,23 @@ namespace Shop
             services.AddControllersWithViews();
             services.AddRazorPages().AddRazorRuntimeCompilation();
             services.AddTransient<IAllCars, CarRepository>();
+            services.AddTransient<IAllOrders, OrdersRepository>();
             services.AddTransient<ICarsCategory, CategoryRepository>();
-        }
+        } 
         public void Configure(IApplicationBuilder app, IHostEnvironment env)
         {
             app.UseDeveloperExceptionPage();
             app.UseStatusCodePages();
             app.UseSession();
             app.UseStaticFiles();
-            app.UseMvcWithDefaultRoute();
+            //app.UseMvcWithDefaultRoute();
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(name: "default", template: "{controller=Home}/{action=Index}/{id?}");
+                routes.MapRoute(name: "categoryFilter", template: "{Car}/{action}/{category?}", defaults: new { controller = "Car", action = "MyCarsList" });
+            });
+
+
             using (var scope = app.ApplicationServices.CreateScope())
             {
                 AppDBContent content = scope.ServiceProvider.GetRequiredService<AppDBContent>();

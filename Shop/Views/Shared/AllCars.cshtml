@@ -1,11 +1,12 @@
 ﻿@using System.Globalization
 @model Shop.Data.Models.Car
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 <div class="col-lg-4 mx-auto">
     <img class="img-thumbnail" src="@Model.Img" alt="@Model.Name" style="height: 250px; width: 400px;"/>
     <h2>@Model.Name</h2>
     <p>Ціна: @Model.Price.ToString("c", CultureInfo.CreateSpecificCulture("EN-US"))</p>
     <p>
-        <a class="btn btn-warning" href="#">Детальніше</a>
+        <a class="btn btn-warning" asp-controller="ShopCart" asp-action="ToCart" asp-route-id="@Model.Id">Додати до кошику</a>
     </p>
 </div>

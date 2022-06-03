@@ -22,7 +22,7 @@ namespace Shop.Migrations
                 {
                     table.PrimaryKey("PK_ShopCartItem", x => x.id);
                     table.ForeignKey(
-                        name: "FK_ShopCartItem_Car_carId",
+                        name: "FK_ShopCartItem_Car_carId", 
                         column: x => x.carId,
                         principalTable: "Car",
                         principalColumn: "Id",

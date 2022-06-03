@@ -18,7 +18,7 @@ using Shop.Data.Mocks;
 //app.UseMvcWithDefaultRoute();
 //app.Run();
 
-namespace Shop
+namespace Shop 
 {
     public class Program
     {
