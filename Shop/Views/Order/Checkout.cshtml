@@ -1,0 +1,46 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model Order
+
+<div class="row">
+    <h3>
+        Оформлення замовлення
+    </h3>
+    <form asp-action="Checkout" method="post" class="form-horizontal">
+        <div class="form-group">
+            <label asp-for="name"></label>
+            <div class="col-md-5">
+                <input asp-for="name" class="form-control" />
+                <span asp-validation-for="name" class="text-danger"></span>
+            </div>
+        </div> 
+        <div class="form-group">
+            <label asp-for="surName"></label>
+            <div class="col-md-5">
+                <input asp-for="surName" class="form-control" />
+                <span asp-validation-for="surName" class="text-danger"></span>
+            </div>
+        </div> 
+        <div class="form-group">
+            <label asp-for="adress"></label>
+            <div class="col-md-5">
+                <input asp-for="adress" class="form-control" />
+                <span asp-validation-for="adress" class="text-danger"></span>
+            </div>
+        </div> 
+        <div class="form-group">
+            <label asp-for="phone"></label>
+            <div class="col-md-5">
+                <input asp-for="phone" class="form-control" />
+                <span asp-validation-for="phone" class="text-danger"></span>
+            </div>
+        </div> 
+        <div class="form-group">
+            <label asp-for="email"></label>
+            <div class="col-md-5">
+                <input asp-for="email" class="form-control" />
+                <span asp-validation-for="email" class="text-danger"></span>
+            </div>
+        </div> 
+        <input class="btn btn-success" type="submit" value="Замовити" />
+    </form>
+</div>

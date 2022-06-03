@@ -1,14 +1,15 @@
 ﻿@using System.Globalization
 @model Shop.ViewModels.ShopCartViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 <div class="container">
     @foreach (var el in Model.shopCart.ShopCartItemsList)
     {
         <div class="alert alert-warning mt-3">
-            <b>Автомобіль:</b>@el.car.Name<br />
-            <b>Ціна:</b>@el.car.Price.ToString("c", CultureInfo.CreateSpecificCulture("EN-US"))
+            <b>Автомобіль: </b>@el.car.Name<br />
+            <b>Ціна: </b>@el.car.Price.ToString("c", CultureInfo.CreateSpecificCulture("EN-US"))
         </div>
     }
     <hr />
-    <div class="btn btn-danger" asp-controller="Order">Придбати</div>
+    <a class="btn btn-danger" asp-controller="Order" asp-action="Checkout">Придбати</a>
 </div>
