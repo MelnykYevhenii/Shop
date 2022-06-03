@@ -29,7 +29,7 @@ namespace Shop
             services.AddRazorPages().AddRazorRuntimeCompilation();
             services.AddTransient<IAllCars, CarRepository>();
             services.AddTransient<ICarsCategory, CategoryRepository>();
-        }
+        } 
         public void Configure(IApplicationBuilder app, IHostEnvironment env)
         {
             app.UseDeveloperExceptionPage();

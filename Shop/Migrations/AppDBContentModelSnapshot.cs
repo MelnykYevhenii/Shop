@@ -24,7 +24,7 @@ namespace Shop.Migrations
             modelBuilder.Entity("Shop.Data.Models.Car", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
+                        .ValueGeneratedOnAdd() 
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);

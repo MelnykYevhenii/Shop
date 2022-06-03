@@ -9,7 +9,7 @@ namespace Shop.Data.Models
         public ShopCart(AppDBContent appDbContent)
         {
             this._content = appDbContent;
-        }
+        } 
         public string ShopCartId { get; set; }
         public List<ShopCartItem> ShopCartItemsList { get; set; }
 
